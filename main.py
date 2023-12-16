@@ -5,6 +5,7 @@ from PyQt5.QtCore import Qt
 import random
 from PyQt5 import uic
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -20,7 +21,7 @@ class MainWindow(QMainWindow):
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setPen(Qt.NoPen)
-        painter.setBrush(QColor(255, 255, 0))
+        painter.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
         painter.drawEllipse(self.width() / 2 - self.radius / 2, self.height() / 2 - self.radius / 2,
                             self.radius, self.radius)
 
