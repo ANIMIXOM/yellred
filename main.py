@@ -4,12 +4,12 @@ from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtCore import Qt
 import random
 from PyQt5 import uic
+from crs import Ui_MainWindow
 
-
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('untitled.ui', self)  # Загружаем дизайн
+        self.setupUi(self)
         self.button_play.clicked.connect(self.create_yellow_circle)
 
         self.radius = 0
